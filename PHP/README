@@ -1,0 +1,1 @@
+This folder contains simple to follow PHP modules that to browse or harvest data from OGC SOS 2.0 endpoints. The sos_config.properties is required to run any of the published modules.
