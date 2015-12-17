@@ -12,10 +12,9 @@ Notes:      GCOOS Python Browse SOS. The example methods are intended
             http://data.gcoos.org/52N_SOS.php.  We use BeautifulSoup4
             to parse the XML as good soup is a wonderous thing.
 """
-import sys
 import urllib2
 from bs4 import BeautifulSoup as soup
-from geojson import Feature, Point, FeatureCollection
+from geojson import Feature, Point
 def gcoos_get_capabilities():
     """
     Notes:
@@ -61,6 +60,8 @@ def gcoos_describe_sensor(urn):
     Hardwired url for this demo -- very ugly but we ran out
     of time. Will work on making this much more pythonic.
     Hard to embed parameters with all the quotable chars...
+    [TO DO] Change the concat to a simple string.replace()
+    and we should be good to go.
     """
     url = 'http://data.gcoos.org:8080/52nSOS/sos/kvp?service=SOS&'
     url = url + 'version=1.0.0&request=DescribeSensor&procedure='
@@ -75,11 +76,13 @@ def gcoos_describe_sensor(urn):
     the_pos = the_soup.find('gml:pos').contents[0]
     latitude = float(the_pos.split(' ')[0])
     longitude = float(the_pos.split(' ')[1])
+    #slurp up the rest of the tasty bits...
     the_org = the_soup.find('sml:organizationname').contents[0]
     the_description = the_soup.find('gml:description').contents[0]
     sensor_list = []
     for sensor in set(the_soup.find_all('sml:output')):
         sensor_list.append(sensor['name'])
+    #Get GeoJSON with it...
     my_feature = Feature(geometry=Point(([longitude, latitude])))
     my_feature.header = {'Organization' : the_org,
                          'Station' : urn,
