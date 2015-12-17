@@ -1,2 +1,6 @@
-This folder contains simple to follow PHP modules that to browse or harvest data from OGC SOS 2.0 endpoints. There so many data embedded onto the SOS and these modules are just few of the possibilities that one can accomplish in browsing the OGC SOS returns. The ogc_sos.config file contains the path to GetCapabilities and is required to run any of the published modules.
-![GCOOS browse PHP](http://data.gcoos.org/documents/browseSOS_PHP.png)
+Majority of software engineers and system developers, who are not familiar with the Open Geospatial Consortium (OGC) Sensor Observation Service ( SOS) schema, will have difficulties in using the SOS endpoint. The phpBrowse_SOS project, will provide parsers for the three basic request calls (GetCapabilities, DescribeSensor and GetObservation) that returns results in a manner that can be used directly by a module developer.
+
+Several examples on how to effectively use the products to presents results in a formatted test output, plotting results directly to mapping modules and plots to display basic statistics and distribution of the data to facilitate the perusal of the repository.
+
+###Architecture
+
