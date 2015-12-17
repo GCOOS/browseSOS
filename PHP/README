@@ -1,3 +1,2 @@
 This folder contains simple to follow PHP modules that to browse or harvest data from OGC SOS 2.0 endpoints. There so many data embedded onto the SOS and these modules are just few of the possibilities that one can accomplish in browsing the OGC SOS returns. The ogc_sos.config file contains the path to GetCapabilities and is required to run any of the published modules.
-
-![GCOOS browseSOS PHP](http://data.gcoos.org/documents/browseSOS_PHP.png)
+![GCOOS browse PHP](http://data.gcoos.org/documents/browseSOS_PHP.png)
