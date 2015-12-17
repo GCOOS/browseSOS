@@ -2,8 +2,8 @@ Majority of software engineers and system developers, who are not familiar with 
 
 Several examples on how to effectively use the products to presents results in a formatted test output, plotting results directly to mapping modules and plots to display basic statistics and distribution of the data to facilitate the perusal of the repository.
 
-###NOTE:
-Migration of the files at http://data.gcoos.org/tools/doc/ will be migrated to this folder next year.
+####Migration Notice:
+Migration of the files at http://data.gcoos.org/tools/doc/ to these folders will be completed next year.
 
 ###Architecture
 ![GCOOS browse SOS](http://data.gcoos.org/documents/browseSOS_PHP.png)
