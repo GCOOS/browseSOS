@@ -20,3 +20,5 @@ We use ConfigParser to build the url for the different services. Not all RAs are
         the_collection.append(gcoos_describe_sensor('gcoos', station))
     the_fc = FeatureCollection(the_collection)
 
+###Architecture
+![GCOOS browse SOS python](http://data.gcoos.org/documents/browseSOS_python.png)
