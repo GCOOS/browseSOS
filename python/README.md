@@ -11,5 +11,27 @@ We use ConfigParser to build the url for the different services. Not all RAs are
 
 ######gcoos_describe_sensor(r_a, urn):
     gcoos_describe_sensor('gcoos', 'urn:ioos:station:nerrs:apaebwq') ->
-
-"{"geometry": {"coordinates": [-84.8752, 29.7858], "type": "Point"}, "header": {"Description": "East Bay Bottom", "Organization": "National Estuarine Research Reserve System, NOAA", "Sensors": ["Sea Water Practical Salinity", "Sea Water Turbidity", "Mass Concentration Of Oxygen In Sea Water", "Sea Water Temperature"], "Station": "urn:ioos:station:nerrs:apaebwq"}, "properties": {}, "type": "Feature"}"
+{
+  "geometry": {
+    "coordinates": [
+      -84.8752,
+      29.7858
+    ],
+    "type": "Point"
+  },
+  "header": {
+    "Description": "East Bay Bottom",
+    "Organization": "National Estuarine Research Reserve System, NOAA",
+    "Sensors": [
+      "Sea Water Practical Salinity",
+      "Sea Water Turbidity",
+      "Mass Concentration Of Oxygen In Sea Water",
+      "Sea Water Temperature"
+    ],
+    "Station": "urn:ioos:station:nerrs:apaebwq"
+  },
+  "properties": {
+    
+  },
+  "type": "Feature"
+}
