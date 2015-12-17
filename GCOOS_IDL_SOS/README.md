@@ -7,4 +7,4 @@ The XML SOS responses are converted into IDL hashes/lists using Ed Shaya’s (es
 
 These example codes are meant to be taken and modified to suit your purposes.
 
-![GCOOS browse IDL](http://data.gcoos.org/documents/browseSOS_IDL.png)
+![GCOOS browse IDL](http://data.gcoos.org/documents/browseSOS_IDL2.png)
