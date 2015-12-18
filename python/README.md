@@ -23,11 +23,6 @@ Note: We are now using xml.etree.ElementTree as the XML parser in gcoos_get_obse
         the_collection.append(gcoos_describe_sensor('gcoos', station))
     the_fc = FeatureCollection(the_collection)
 
-<<<<<<< HEAD
 #####Getting the latest observation:
     gcoos_get_observation('gcoos', 'air_temperature', 'urn:ioos:station:disl:bsca1')->
        2015-12-18T11:30:00.000Z,disl_bsca1_airtemperature,8.64 
-=======
-###Architecture
-![GCOOS browse SOS python](http://data.gcoos.org/documents/browseSOS_python.png)
->>>>>>> ef4510c34e922dd8bd86bfe0cc11c8e139d2ab67
