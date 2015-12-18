@@ -16,12 +16,12 @@ With ArcGIS Server SOS Extension developed by 52North and ESRI, it allows queryi
 These utilities are a work in progress. They'll be continually updated and improved as time allows. 
 
 ##Requirements
-This script uses ####Pyoos (http://github.com/ioos/pyoos). It can be installed with pip.
+This script uses **Pyoos** (http://github.com/ioos/pyoos).
 ```
 $ pip install pyoos
 ```
 Note that I'm using Enthought and/or Anaconda python package manager and set it up to access them from ArcGIS (http://gis.stackexchange.com/questions/59012/how-to-access-esri-arcpy-modules-from-enthought-canopy/59144#59144).
 
 ##Utility
-When you run "Add Toolbox" and select this pyt file, it will create a layer in C:/Temp folder and it will look like this.
+Use "Add Toolbox" and select this pyt file. This will create a layer in C:/Temp folder and the layer looks like this.
 ![Demo](img/arc.png)
