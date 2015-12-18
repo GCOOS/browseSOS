@@ -12,6 +12,7 @@ Notes:      GCOOS Python Browse SOS. The example methods are intended
             http://data.gcoos.org/52N_SOS.php.  We use BeautifulSoup4
             to parse the XML as good soup is a wonderous thing.
 """
+import xml.etree.ElementTree as et
 import ConfigParser
 import urllib2
 from bs4 import BeautifulSoup as soup
@@ -63,6 +64,9 @@ def gcoos_get_all_stations(r_a):
     the_soup = (the_soup.find_all('gml:name'))
     for station in the_soup:
         the_stations.append(station.contents[0])
+    #Drop the network:gcoos:all entry. Probably a way not to fetch
+    #but for now this works.
+    the_stations.remove('urn:ioos:network:gcoos:all')
     return the_stations
 
 def gcoos_describe_sensor(r_a, urn):
@@ -98,11 +102,33 @@ def gcoos_describe_sensor(r_a, urn):
                          'Sensors' : sensor_list}
     return my_feature
 
-def gcoos_get_observation(station):
+def gcoos_get_observation(r_a, sensor, urn):
     """
     Notes:
+    We're migrating to lxml so not using BeautifulSoup
+    in this function.
     """
-    print station
+    if DEBUG:
+        print "gcoos_get_observation(%s, %s, %s)" % (r_a, sensor, urn)
+    the_url = CONFIG.get('ra_servers', r_a)
+    the_url = the_url + CONFIG.get('base_urls', 'get_observation')
+    the_url = the_url.replace('[anyURI]', urn)
+    the_url = the_url.replace('[anySensor]', sensor)
+    the_url = the_url.replace('[anyRA]', r_a)
+
+    #We need to move the tag definitions to the config file...
+    #And we can probably do the parse all in one find but for now
+    #we'll drop down one level at a time.
+    root = et.fromstring((urllib2.urlopen(the_url).read()))
+    da_tag = '{http://www.opengis.net/swe/2.0}DataArray'
+    oc_def = """http://mmisw.org/ont/ioos/swe_element_type/"""
+    oc_def = oc_def + """sensorObservationCollection"""
+    values_tag = '{http://www.opengis.net/swe/2.0}values'
+    for elem in root.iter(tag=da_tag):
+        if elem.attrib['definition'] == oc_def:
+            for child in elem.iter(tag=values_tag):
+                data_record = child.text
+    return data_record
 
 def gcoos_get_org_stations(org):
     """

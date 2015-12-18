@@ -4,7 +4,7 @@ DOCSTRING
 """
 from geojson import FeatureCollection
 from gcoos_sos_utils import (gcoos_get_all_stations, gcoos_describe_sensor,
-                             gcoos_get_capabilities)
+                             gcoos_get_capabilities, gcoos_get_observation)
 def get_capabilities(r_a):
     """
     DOCSTRING
@@ -58,6 +58,9 @@ def get_all_sensors_fc(r_a):
     print the_fc
 
 if __name__ == '__main__':
+    #get_all_stations('gcoos')
     #get_station_total('gcoos')
     #get_single_sensor('gcoos', 'urn:ioos:station:nerrs:apaebwq')
-    get_all_sensors_fc('gcoos')
+    #get_all_sensors('gcoos')
+    print gcoos_get_observation('gcoos', 'air_temperature', 'urn:ioos:station:disl:bsca1')
+
