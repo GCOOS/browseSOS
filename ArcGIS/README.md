@@ -1,3 +1,5 @@
+#arcBrowse_SOS.pyt
+
 Currently IOOS suggests 3 SOS clients    (http://catalog.ioos.us/help/download/) to access SOS to retrieve information and data: Pyoos, the Environmental Data Connector (EDC) and 52n Sensor Web Client.
 
 EDC works well with Data Integration Framework (DIF) SOS. However it doesn’t work with new IOOS-build SOS (IOOS SOS) that GCOOS and other 2 Regional Association have adopted.
@@ -9,3 +11,17 @@ With ArcGIS Server SOS Extension developed by 52North and ESRI, it allows queryi
 
 
 ![GCOOS browse SOS ArcGIS](http://data.gcoos.org/documents/browseSOS_ArcGIS.png)
+
+##Note
+These utilities are a work in progress. They'll be continually updated and improved as time allows. 
+
+##Requirements
+This script uses ####Pyoos (http://github.com/ioos/pyoos). It can be installed with pip.
+```
+$ pip install pyoos
+```
+Note that I'm using Enthought and/or Anaconda python package manager and set it up to access them from ArcGIS (http://gis.stackexchange.com/questions/59012/how-to-access-esri-arcpy-modules-from-enthought-canopy/59144#59144).
+
+##Utility
+When you run "Add Toolbox" and select this pyt file, it will create a layer in C:/Temp folder and it will look like this.
+![Demo](img/arc.png)
